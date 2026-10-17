@@ -33,3 +33,6 @@ The sources retain their own licenses and original notices; the separate upstrea
 attribution audit remains a release prerequisite.
 
 License scope and the retained upstream notices are described in [LICENSES.md](LICENSES.md).
+
+Project description, installation instructions and complete binary coverage:
+[COPR.md](COPR.md).
