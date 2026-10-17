@@ -2,11 +2,11 @@
 # Experimental pinned snapshot; native Fedora build validation pending.
 Name:           abyssparse
 Version:        0.6.8
-Release:        0.1.20261017gitdcd10ad%{?dist}
+Release:        0.2.20261017git45d399e%{?dist}
 Summary:        Configuration parsing library for Abyss
 License:        LGPL-3.0-only
 URL:            https://github.com/AbyssWM/Abyssparse
-Source0:        https://github.com/AbyssWM/Abyssparse/archive/dcd10adbf858a4f0128a04938878844d935298d9.tar.gz
+Source0:        https://github.com/AbyssWM/Abyssparse/archive/45d399ec11762312395d62f1e66f6d3c4b53c482.tar.gz
 BuildRequires:  abyssutils-devel
 BuildRequires:  cmake
 BuildRequires:  cmake-rpm-macros
@@ -27,8 +27,8 @@ Requires:       abyssutils-devel
 Headers and build metadata for %{name}.
 
 %prep
-printf '%s  %s\n' 'cedd57c46b449d5ba8998020d458cc9a6a9394759225342aa1048964125cf685' '%{SOURCE0}' | sha256sum --check --status
-%autosetup -p1 -n Abyssparse-dcd10adbf858a4f0128a04938878844d935298d9
+printf '%s  %s\n' 'b3b43a824e8a6112c7a62534536f712146ea27daea77ff6afe06179d536e47c4' '%{SOURCE0}' | sha256sum --check --status
+%autosetup -p1 -n Abyssparse-45d399ec11762312395d62f1e66f6d3c4b53c482
 
 %build
 %cmake -DBUILD_TESTING=OFF -DFETCHCONTENT_FULLY_DISCONNECTED=ON
@@ -38,7 +38,7 @@ printf '%s  %s\n' 'cedd57c46b449d5ba8998020d458cc9a6a9394759225342aa1048964125cf
 %cmake_install
 
 %files
-%license LICENSE
+%license LICENSE COPYING COPYRIGHT
 %{_libdir}/libabyssparse.so.*
 
 %files devel

@@ -31,3 +31,5 @@ versions. No COPR credentials or signing keys belong in this repository.
 Maintainer: bb8TheRobot <bb8therobot85@gmail.com>. Packaging: 0BSD.
 The sources retain their own licenses and original notices; the separate upstream
 attribution audit remains a release prerequisite.
+
+License scope and the retained upstream notices are described in [LICENSES.md](LICENSES.md).
