@@ -57,7 +57,8 @@ successful Fedora builds. The libraries also provide shared objects.
 ## Build and publication status
 
 The Git recipes are public; a COPR project/build is not created by a Git push.
-Create the project in COPR, select the Fedora x86_64 chroot being targeted, then
+Create the project in COPR and select both `fedora-44-x86_64` and
+`fedora-45-x86_64`, as chosen by the maintainer. Then
 use SCM/Git with `https://github.com/AbyssWM/fedora-builds.git`, branch `main`,
 no subdirectory, `specs/PACKAGE.spec`, and the **make srpm** method.
 
@@ -69,3 +70,8 @@ tests are performed by Raphi after COPR publication.
 
 References: [COPR SCM builds](https://docs.copr.fedorainfracloud.org/user_documentation.html#scm),
 [COPR setup](https://docs.copr.fedorainfracloud.org/screenshots_tutorial.html).
+
+Project creation: leave initial builds empty, keep automatic repository publishing
+enabled, disable automatic Fedora branching and binary-build network access.
+Enable fedora-review. Leave additional repositories/packages/macros empty and
+keep the default isolation/bootstrap settings.
