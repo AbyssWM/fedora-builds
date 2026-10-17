@@ -9,8 +9,8 @@ libraries have `-devel` subpackages. The compositor uses the public default
 configuration and explicitly checksummed Glaze/udis86 archives. No build-time
 Git fallback or personal user config is required.
 
-The intended COPR owner is `bb8therobot1717`; a project named `abyss` still needs
-to be created. With COPR's Git SCM source method, select this repository,
+The public COPR project is [`bb8therobot1717/Abyss`](https://copr.fedorainfracloud.org/coprs/bb8therobot1717/Abyss/),
+with Fedora 44 and 45 x86_64 chroots. With COPR's Git SCM source method, select this repository,
 the `main` branch, and the **make srpm** build method. For each package set the
 spec path to `specs/PACKAGE.spec`. `.copr/Makefile` calls the source-RPM helper.
 Build in the order listed in `sources.json`; dependencies must be available in

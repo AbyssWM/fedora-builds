@@ -1,6 +1,6 @@
 # COPR publication
 
-One public project, `bb8therobot1717/abyss`, is intended to contain all 17
+The public project, `bb8therobot1717/Abyss`, is intended to contain all 17
 primary packages and the seven library development subpackages. Separate COPR
 projects per executable are unnecessary. Programs supplied together by an
 upstream project remain in the corresponding RPM.
@@ -21,7 +21,7 @@ built around abyssland and configured in c++
 Once the packages have successfully built and been published, Fedora users can run:
 
 ```sh
-sudo dnf copr enable bb8therobot1717/abyss
+sudo dnf copr enable bb8therobot1717/Abyss
 sudo dnf install abyssland
 ```
 
@@ -56,7 +56,9 @@ successful Fedora builds. The libraries also provide shared objects.
 
 ## Build and publication status
 
-The Git recipes are public; a COPR project/build is not created by a Git push.
+The COPR project is public at https://copr.fedorainfracloud.org/coprs/bb8therobot1717/Abyss/.
+Fedora 44 and 45 x86_64 chroots were verified through the public API.
+A Git push alone does not submit a COPR build.
 Create the project in COPR and select both `fedora-44-x86_64` and
 `fedora-45-x86_64`, as chosen by the maintainer. Then
 use SCM/Git with `https://github.com/AbyssWM/fedora-builds.git`, branch `main`,
