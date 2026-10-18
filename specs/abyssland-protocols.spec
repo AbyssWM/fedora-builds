@@ -9,7 +9,6 @@ URL:            https://github.com/AbyssWM/Abyssland-protocols
 Source0:        https://github.com/AbyssWM/Abyssland-protocols/archive/23246e7462e75bc07a04e62b1edc68b68770f73e.tar.gz
 BuildArch:      noarch
 BuildRequires:  meson
-BuildRequires:  meson-rpm-macros
 BuildRequires:  ninja-build
 BuildRequires:  pkgconf-pkg-config
 
