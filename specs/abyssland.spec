@@ -70,6 +70,8 @@ printf '%s  %s\n' '2f459fafa19535ef1be417bf7614e4f92475e5787d7ba76df20287cc29d1b
 %setup -q -n Abyssland-eafefb8907b6b6b46990977b56ec83dbcb019957 -a1 -a2
 install -d subprojects/udis86
 cp -a udis86-5336633af70f3917760a6d441ff02d93477b0c86/. subprojects/udis86/
+cp -p glaze-7.2.0/LICENSE LICENSE.glaze
+cp -p udis86-5336633af70f3917760a6d441ff02d93477b0c86/LICENSE LICENSE.udis86
 
 %build
 %cmake -DBUILD_TESTING=OFF -DFETCHCONTENT_FULLY_DISCONNECTED=ON -DNO_SYSTEMD=OFF -DNO_UWSM=ON -DABYSS_CONFIG=%{_builddir}/Abyssland-eafefb8907b6b6b46990977b56ec83dbcb019957/config.def.hpp -DFETCHCONTENT_SOURCE_DIR_GLAZE=%{_builddir}/Abyssland-eafefb8907b6b6b46990977b56ec83dbcb019957/glaze-7.2.0
@@ -80,7 +82,7 @@ cp -a udis86-5336633af70f3917760a6d441ff02d93477b0c86/. subprojects/udis86/
 
 %files
 %license LICENSE
-%license glaze-7.2.0/LICENSE udis86-5336633af70f3917760a6d441ff02d93477b0c86/LICENSE
+%license LICENSE.glaze LICENSE.udis86
 %{_bindir}/*
 %{_includedir}/abyssland/
 %{_datadir}/abyss/
@@ -88,3 +90,6 @@ cp -a udis86-5336633af70f3917760a6d441ff02d93477b0c86/. subprojects/udis86/
 %{_datadir}/wayland-sessions/*
 %{_datadir}/xdg-desktop-portal/*
 %{_mandir}/man1/*
+%{_datadir}/bash-completion/completions/abyssctl
+%{_datadir}/fish/vendor_completions.d/abyssctl.fish
+%{_datadir}/zsh/site-functions/_abyssctl
