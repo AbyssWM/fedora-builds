@@ -15,7 +15,7 @@
 ---
 
 > [!WARNING]
-> **Experimental, pre-1.0.** All packages build on Fedora 44 and 45, but no session or hardware tests have been done yet.
+> **First release.** Abyss is usable now, but this is the first version: expect bugs and please report them.
 
 ## 🚀 Install
 
