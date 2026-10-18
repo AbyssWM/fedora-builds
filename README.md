@@ -1,38 +1,87 @@
-# Abyss Fedora builds
+<div align="center">
 
-Experimental RPM definitions for all 17 Abyss repositories. These are development
-snapshots. Native Fedora builds and installation tests are **not yet validated**.
-This repository is independent of Fedora's official package collection.
+<img src="https://github.com/AbyssWM.png?size=200" width="140" alt="Abyss logo">
 
-Sources are pinned in `sources.json`. `specs/` contains one spec per repository;
-libraries have `-devel` subpackages. The compositor uses the public default
-configuration and explicitly checksummed Glaze/udis86 archives. No build-time
-Git fallback or personal user config is required.
+# 🎩 Abyss for Fedora
 
-The public COPR project is [`bb8therobot1717/Abyss`](https://copr.fedorainfracloud.org/coprs/bb8therobot1717/Abyss/),
-with Fedora 44 and 45 x86_64 chroots. With COPR's Git SCM source method, select this repository,
-the `main` branch, and the **make srpm** build method. For each package set the
-spec path to `specs/PACKAGE.spec`. `.copr/Makefile` calls the source-RPM helper.
-Build in the order listed in `sources.json`; dependencies must be available in
-the COPR project before dependent packages are submitted. No automatic builds
-have been enabled or submitted by this repository.
+**RPM specs for the complete Abyss Wayland ecosystem — built on COPR.**
 
-To prepare one source RPM locally on Fedora:
+[![COPR](https://img.shields.io/badge/COPR-bb8therobot1717%2FAbyss-51a2da?style=flat-square&logo=fedora&logoColor=white)](https://copr.fedorainfracloud.org/coprs/bb8therobot1717/Abyss/) [![Fedora](https://img.shields.io/badge/fedora-44%20%7C%2045-294172?style=flat-square&logo=fedora&logoColor=white)](https://fedoraproject.org/) [![Packages](https://img.shields.io/badge/packages-17-7c3aed?style=flat-square)](#-packages) [![Packaging license](https://img.shields.io/badge/packaging-0BSD-blue?style=flat-square)](LICENSE)
+
+[🌐 Website](https://abysswm.github.io/) · [📖 Install guide](https://abysswm.github.io/wiki/getting-started) · [🌊 Abyss on GitHub](https://github.com/AbyssWM)
+
+</div>
+
+---
+
+> [!WARNING]
+> **Experimental, pre-1.0.** All packages build on Fedora 44 and 45, but no session or hardware tests have been done yet.
+
+## 🚀 Install
+
+```sh
+sudo dnf copr enable bb8therobot1717/Abyss
+sudo dnf install abyssland
+```
+
+Add the tools you want:
+
+```sh
+sudo dnf install xdg-desktop-portal-abyss abysslock abysspaper abysspolkit abyssdusk abysspicker abyss-guiutils
+```
+
+Then pick **Abyssland** in your display manager, or run `start-abyssland` from a TTY.
+
+## 🔨 How it builds
+
+COPR builds straight from this repository: **SCM → Git**, branch `main`, spec `specs/<package>.spec`, method **make srpm**.
+[`.copr/Makefile`](.copr/Makefile) runs [`tools/srpm.py`](tools/srpm.py), which downloads the pinned source archive, checks it against
+[`sources.json`](sources.json) and assembles the source RPM. No network access is needed during the binary build.
+
+Prepare a source RPM locally:
 
 ```sh
 python3 tools/srpm.py --spec specs/abyssutils.spec --outdir out
 ```
 
-`--prepare-only` verifies and stages sources without invoking rpmbuild.
-The actual build still needs native dependency resolution and RPM validation.
-Choose supported Fedora chroots only after verifying the compiler and dependency
-versions. No COPR credentials or signing keys belong in this repository.
+`--prepare-only` only verifies and stages the sources.
 
-Maintainer: bb8TheRobot <bb8therobot85@gmail.com>. Packaging: 0BSD.
-The sources retain their own licenses and original notices; the separate upstream
-attribution audit remains a release prerequisite.
+<details>
+<summary>Build results</summary>
 
-License scope and the retained upstream notices are described in [LICENSES.md](LICENSES.md).
+All 17 packages succeeded on `fedora-44-x86_64` and `fedora-45-x86_64` (2026-10-18).
+Fixes found along the way: an invalid `meson-rpm-macros` build dependency, the AbyssLock PAM file path,
+packaging the `abyssctl` shell completions and the bundled Glaze / udis86 license files.
+Full project details: [COPR.md](COPR.md).
 
-Project description, installation instructions and complete binary coverage:
-[COPR.md](COPR.md).
+</details>
+
+## 📋 Packages
+
+Listed in build order — every package only depends on the ones above it.
+
+| # | Package | Development package |
+|---|---|---|
+| 1 | [`abyssutils`](specs/abyssutils.spec) | `abyssutils-devel` |
+| 2 | [`abyss-scanner`](specs/abyss-scanner.spec) | — |
+| 3 | [`abyssland-protocols`](specs/abyssland-protocols.spec) | — |
+| 4 | [`abyssparse`](specs/abyssparse.spec) | `abyssparse-devel` |
+| 5 | [`abysswire`](specs/abysswire.spec) | `abysswire-devel` |
+| 6 | [`abyssgraphics`](specs/abyssgraphics.spec) | `abyssgraphics-devel` |
+| 7 | [`abyssal`](specs/abyssal.spec) | `abyssal-devel` |
+| 8 | [`abysstoolkit`](specs/abysstoolkit.spec) | `abysstoolkit-devel` |
+| 9 | [`abysscursor`](specs/abysscursor.spec) | `abysscursor-devel` |
+| 10 | [`abyssland`](specs/abyssland.spec) | — |
+| 11 | [`abyss-guiutils`](specs/abyss-guiutils.spec) | — |
+| 12 | [`xdg-desktop-portal-abyss`](specs/xdg-desktop-portal-abyss.spec) | — |
+| 13 | [`abysspicker`](specs/abysspicker.spec) | — |
+| 14 | [`abyssdusk`](specs/abyssdusk.spec) | — |
+| 15 | [`abysspaper`](specs/abysspaper.spec) | — |
+| 16 | [`abysslock`](specs/abysslock.spec) | — |
+| 17 | [`abysspolkit`](specs/abysspolkit.spec) | — |
+
+## ⚖️ License
+
+The packaging in this repository is **0BSD** ([LICENSE](LICENSE)). The packaged software keeps its own licenses — see [LICENSES.md](LICENSES.md).
+
+Maintainer: bb8TheRobot &lt;bb8therobot85@gmail.com&gt;
