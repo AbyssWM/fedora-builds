@@ -2,11 +2,11 @@
 # Experimental pinned snapshot; native Fedora build validation pending.
 Name:           abyssdusk
 Version:        0.4.0
-Release:        0.1.20261027git6c58248%{?dist}
+Release:        0.1.20261027gitb383b37%{?dist}
 Summary:        Display color temperature manager for Abyss
 License:        BSD-3-Clause
 URL:            https://github.com/AbyssWM/AbyssDusk
-Source0:        https://github.com/AbyssWM/AbyssDusk/archive/6c58248dbd91d392fde18aa7764181b80b2da539.tar.gz
+Source0:        https://github.com/AbyssWM/AbyssDusk/archive/b383b3706c40b8b6c0c76ec359ca4b89652f9b46.tar.gz
 BuildRequires:  abyss-scanner
 BuildRequires:  abyssland-protocols
 BuildRequires:  abyssparse-devel
@@ -27,8 +27,8 @@ Display color temperature manager for Abyss.
 Pinned experimental source snapshot maintained by AbyssWM.
 
 %prep
-printf '%s  %s\n' '9cced56fb5bc428081dddb36293241fd9ef6d006aa5e63a34881742ebb9dc077' '%{SOURCE0}' | sha256sum --check --status
-%autosetup -p1 -n AbyssDusk-6c58248dbd91d392fde18aa7764181b80b2da539
+printf '%s  %s\n' '7cabb12e3d8eb24cad418a17b1e498f18a9e501066426131ad3a698c6608019a' '%{SOURCE0}' | sha256sum --check --status
+%autosetup -p1 -n AbyssDusk-b383b3706c40b8b6c0c76ec359ca4b89652f9b46
 
 %build
 %cmake -DBUILD_TESTING=OFF -DFETCHCONTENT_FULLY_DISCONNECTED=ON

@@ -2,11 +2,11 @@
 # Experimental pinned snapshot; native Fedora build validation pending.
 Name:           abyssland
 Version:        0.56.2
-Release:        0.1.20261021git0a0a351%{?dist}
+Release:        0.1.20261027git48e0820%{?dist}
 Summary:        Dynamic tiling Wayland compositor with C++ configuration
 License:        BSD-3-Clause AND MIT AND BSD-2-Clause
 URL:            https://github.com/AbyssWM/Abyssland
-Source0:        https://github.com/AbyssWM/Abyssland/archive/0a0a351469da7f8281094e1d4f7abe96e2dcda39.tar.gz
+Source0:        https://github.com/AbyssWM/Abyssland/archive/48e08203f190276fd4e66c18c4e201f683978c12.tar.gz
 Source1:        https://github.com/stephenberry/glaze/archive/refs/tags/v7.2.0.tar.gz
 Source2:        https://github.com/canihavesomecoffee/udis86/archive/5336633af70f3917760a6d441ff02d93477b0c86.tar.gz
 BuildRequires:  abyss-scanner
@@ -64,17 +64,17 @@ Dynamic tiling Wayland compositor with C++ configuration.
 Pinned experimental source snapshot maintained by AbyssWM.
 
 %prep
-printf '%s  %s\n' '2c238186e2121fe870447143a1ac77a534bffc35db7ffa2d6f950480c9a78eb1' '%{SOURCE0}' | sha256sum --check --status
+printf '%s  %s\n' 'bd937260c900b4e11273f388695e1ae908758170a8f5df2945c71c0b0dcf3906' '%{SOURCE0}' | sha256sum --check --status
 printf '%s  %s\n' '17dba19ae63ae48f94994f00d49d5cb3c8f1306db1046c534c4828662490b7d4' '%{SOURCE1}' | sha256sum --check --status
 printf '%s  %s\n' '2f459fafa19535ef1be417bf7614e4f92475e5787d7ba76df20287cc29d1b5a9' '%{SOURCE2}' | sha256sum --check --status
-%setup -q -n Abyssland-0a0a351469da7f8281094e1d4f7abe96e2dcda39 -a1 -a2
+%setup -q -n Abyssland-48e08203f190276fd4e66c18c4e201f683978c12 -a1 -a2
 install -d subprojects/udis86
 cp -a udis86-5336633af70f3917760a6d441ff02d93477b0c86/. subprojects/udis86/
 cp -p glaze-7.2.0/LICENSE LICENSE.glaze
 cp -p udis86-5336633af70f3917760a6d441ff02d93477b0c86/LICENSE LICENSE.udis86
 
 %build
-%cmake -DBUILD_TESTING=OFF -DFETCHCONTENT_FULLY_DISCONNECTED=ON -DNO_SYSTEMD=OFF -DNO_UWSM=ON -DABYSS_CONFIG=%{_builddir}/Abyssland-0a0a351469da7f8281094e1d4f7abe96e2dcda39/config.def.hpp -DFETCHCONTENT_SOURCE_DIR_GLAZE=%{_builddir}/Abyssland-0a0a351469da7f8281094e1d4f7abe96e2dcda39/glaze-7.2.0
+%cmake -DBUILD_TESTING=OFF -DFETCHCONTENT_FULLY_DISCONNECTED=ON -DNO_SYSTEMD=OFF -DNO_UWSM=ON -DABYSS_CONFIG=%{_builddir}/Abyssland-48e08203f190276fd4e66c18c4e201f683978c12/config.def.hpp -DFETCHCONTENT_SOURCE_DIR_GLAZE=%{_builddir}/Abyssland-48e08203f190276fd4e66c18c4e201f683978c12/glaze-7.2.0
 %cmake_build
 
 %install
