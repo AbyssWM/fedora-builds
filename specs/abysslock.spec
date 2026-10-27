@@ -2,12 +2,11 @@
 # Experimental pinned snapshot; native Fedora build validation pending.
 Name:           abysslock
 Version:        0.9.6
-Release:        0.1.20261017git651a5ec%{?dist}
+Release:        0.1.20261027gitce1058c%{?dist}
 Summary:        Wayland session lock for Abyss
 License:        BSD-3-Clause
 URL:            https://github.com/AbyssWM/AbyssLock
-Source0:        https://github.com/AbyssWM/AbyssLock/archive/651a5ecf43b742965bca25e99056cf8e7cf83aa3.tar.gz
-Patch0:         0001-install-pam-in-sysconfdir.patch
+Source0:        https://github.com/AbyssWM/AbyssLock/archive/ce1058c6dc4f994af77a9974cb5928ff0222bb2a.tar.gz
 BuildRequires:  abyss-scanner
 BuildRequires:  abyssgraphics-devel
 BuildRequires:  abyssparse-devel
@@ -37,8 +36,8 @@ Wayland session lock for Abyss.
 Pinned experimental source snapshot maintained by AbyssWM.
 
 %prep
-printf '%s  %s\n' '86e77468c4b4c4e598a5a933c16b7436fd3348e02bf0392400838f3c8097f926' '%{SOURCE0}' | sha256sum --check --status
-%autosetup -p1 -n AbyssLock-651a5ecf43b742965bca25e99056cf8e7cf83aa3
+printf '%s  %s\n' '6ac29dd099a1e20eed031da1adf6acd10b8f6ebe165bd6ff9027a1e19becd12b' '%{SOURCE0}' | sha256sum --check --status
+%autosetup -p1 -n AbyssLock-ce1058c6dc4f994af77a9974cb5928ff0222bb2a
 
 %build
 %cmake -DCMAKE_INSTALL_SYSCONFDIR=%{_sysconfdir} -DBUILD_TESTING=OFF -DFETCHCONTENT_FULLY_DISCONNECTED=ON

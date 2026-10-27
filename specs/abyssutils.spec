@@ -2,11 +2,11 @@
 # Experimental pinned snapshot; native Fedora build validation pending.
 Name:           abyssutils
 Version:        0.14.2
-Release:        0.1.20261017gitb423270%{?dist}
+Release:        0.1.20261027gitf1f540b%{?dist}
 Summary:        Utility library for the Abyss ecosystem
 License:        BSD-3-Clause
 URL:            https://github.com/AbyssWM/Abyssutils
-Source0:        https://github.com/AbyssWM/Abyssutils/archive/b423270d43764d3b0f74584fa4a9c61ab1c9b9aa.tar.gz
+Source0:        https://github.com/AbyssWM/Abyssutils/archive/f1f540b7121f6db3c0bb8518a072c1a79755cd82.tar.gz
 BuildRequires:  cmake
 BuildRequires:  cmake-rpm-macros
 BuildRequires:  gcc-c++
@@ -27,8 +27,8 @@ Requires:       pkgconfig(pixman-1)
 Headers and build metadata for %{name}.
 
 %prep
-printf '%s  %s\n' '42a8e2d5fbac0bb9c1837b94b22ce3d491e05159fb1f64258b25fe2fd106d02e' '%{SOURCE0}' | sha256sum --check --status
-%autosetup -p1 -n Abyssutils-b423270d43764d3b0f74584fa4a9c61ab1c9b9aa
+printf '%s  %s\n' '7a579a81abc1dce8ba65e14ffde83f15acd03aa4b07788c5d03a764cce2a7462' '%{SOURCE0}' | sha256sum --check --status
+%autosetup -p1 -n Abyssutils-f1f540b7121f6db3c0bb8518a072c1a79755cd82
 
 %build
 %cmake -DBUILD_TESTING=OFF -DFETCHCONTENT_FULLY_DISCONNECTED=ON

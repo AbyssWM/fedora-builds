@@ -2,11 +2,11 @@
 # Experimental pinned snapshot; native Fedora build validation pending.
 Name:           abyssgraphics
 Version:        0.5.1
-Release:        0.1.20261017git22ddc75%{?dist}
+Release:        0.1.20261027git5f590f2%{?dist}
 Summary:        Graphics and resource library for Abyss
 License:        BSD-3-Clause
 URL:            https://github.com/AbyssWM/Abyssgraphics
-Source0:        https://github.com/AbyssWM/Abyssgraphics/archive/22ddc7596eefffcee611181a556ff1a753eaf433.tar.gz
+Source0:        https://github.com/AbyssWM/Abyssgraphics/archive/5f590f21086f9c1fbb0ca1b0c1d7ffebdfb60945.tar.gz
 BuildRequires:  abyssutils-devel
 BuildRequires:  cmake
 BuildRequires:  cmake-rpm-macros
@@ -57,8 +57,8 @@ Requires:       pkgconfig(pixman-1)
 Headers and build metadata for %{name}.
 
 %prep
-printf '%s  %s\n' 'b254c6ed189468c5408a910cce14c48d3f1105a3bcbe81af82052993e515c22b' '%{SOURCE0}' | sha256sum --check --status
-%autosetup -p1 -n Abyssgraphics-22ddc7596eefffcee611181a556ff1a753eaf433
+printf '%s  %s\n' '5a191c008e3f2719fbd10633e48fa1b40bbf9742593b7f7e5e043c3a0972458d' '%{SOURCE0}' | sha256sum --check --status
+%autosetup -p1 -n Abyssgraphics-5f590f21086f9c1fbb0ca1b0c1d7ffebdfb60945
 
 %build
 %cmake -DBUILD_TESTING=OFF -DFETCHCONTENT_FULLY_DISCONNECTED=ON

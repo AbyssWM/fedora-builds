@@ -2,11 +2,11 @@
 # Experimental pinned snapshot; native Fedora build validation pending.
 Name:           abysspolkit
 Version:        0.2.0
-Release:        0.1.20261017gitf121b36%{?dist}
+Release:        0.1.20261027gitb3a214b%{?dist}
 Summary:        Polkit authentication agent for Abyss
 License:        BSD-3-Clause
 URL:            https://github.com/AbyssWM/AbyssPolkit
-Source0:        https://github.com/AbyssWM/AbyssPolkit/archive/f121b36311c1d4cd1382fe29704d353d203a49a0.tar.gz
+Source0:        https://github.com/AbyssWM/AbyssPolkit/archive/b3a214b1948dcebd2f5f0f6cab2e6fdddf7cd486.tar.gz
 BuildRequires:  abyssgraphics-devel
 BuildRequires:  abyssparse-devel
 BuildRequires:  abysstoolkit-devel
@@ -27,8 +27,8 @@ Polkit authentication agent for Abyss.
 Pinned experimental source snapshot maintained by AbyssWM.
 
 %prep
-printf '%s  %s\n' 'f33d4b688692f37c7e1e8a0ef288e24d0d211ca73c69cc061ea20b489208db7f' '%{SOURCE0}' | sha256sum --check --status
-%autosetup -p1 -n AbyssPolkit-f121b36311c1d4cd1382fe29704d353d203a49a0
+printf '%s  %s\n' '9802a003f2dec0fb8b73adedf2d770a548a20e46d416b77b884768a21e1195dd' '%{SOURCE0}' | sha256sum --check --status
+%autosetup -p1 -n AbyssPolkit-b3a214b1948dcebd2f5f0f6cab2e6fdddf7cd486
 
 %build
 %cmake -DBUILD_TESTING=OFF -DFETCHCONTENT_FULLY_DISCONNECTED=ON

@@ -2,11 +2,11 @@
 # Experimental pinned snapshot; native Fedora build validation pending.
 Name:           abysspicker
 Version:        0.4.7
-Release:        0.1.20261017gitfa99785%{?dist}
+Release:        0.1.20261027git9724004%{?dist}
 Summary:        Wayland color picker for Abyss
 License:        BSD-3-Clause
 URL:            https://github.com/AbyssWM/AbyssPicker
-Source0:        https://github.com/AbyssWM/AbyssPicker/archive/fa997857bfc513c240f8b442802dee64d15e1759.tar.gz
+Source0:        https://github.com/AbyssWM/AbyssPicker/archive/97240042de866686f1da1db3847ddd5f37603e27.tar.gz
 BuildRequires:  abyss-scanner
 BuildRequires:  abyssutils-devel
 BuildRequires:  cmake
@@ -28,8 +28,8 @@ Wayland color picker for Abyss.
 Pinned experimental source snapshot maintained by AbyssWM.
 
 %prep
-printf '%s  %s\n' '18bc8ada83a3cd912140ae7f8bf825f55ffb6ee441b9ad0f267381222319955a' '%{SOURCE0}' | sha256sum --check --status
-%autosetup -p1 -n AbyssPicker-fa997857bfc513c240f8b442802dee64d15e1759
+printf '%s  %s\n' 'e20ff9b5596a8db82b9a979c633ee92f04f70c31b3f875bf8305a2c44322519f' '%{SOURCE0}' | sha256sum --check --status
+%autosetup -p1 -n AbyssPicker-97240042de866686f1da1db3847ddd5f37603e27
 
 %build
 %cmake -DBUILD_TESTING=OFF -DFETCHCONTENT_FULLY_DISCONNECTED=ON
